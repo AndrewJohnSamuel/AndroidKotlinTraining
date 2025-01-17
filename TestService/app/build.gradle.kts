@@ -2,15 +2,14 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    id("kotlin-kapt")
 }
 
 android {
-    namespace = "com.andrew.myshop"
+    namespace = "com.andrew.testservice"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.andrew.myshop"
+        applicationId = "com.andrew.testservice"
         minSdk = 31
         targetSdk = 35
         versionCode = 1
@@ -41,16 +40,7 @@ android {
 }
 
 dependencies {
-    implementation(libs.androidx.monitor)
-    val roomVersion = "2.6.1"
 
-    implementation("androidx.room:room-runtime:$roomVersion")
-    annotationProcessor("androidx.room:room-compiler:$roomVersion")
-    implementation("androidx.room:room-ktx:$roomVersion")
-    kapt("androidx.room:room-compiler:$roomVersion")
-    androidTestImplementation("androidx.room:room-testing:$roomVersion")
-
-    val lifecycle_version = "2.3.0"
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -59,7 +49,6 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
-    implementation(libs.androidx.room.common)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -67,7 +56,4 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
-//    implementation(libs.androidx.room.runtime)
-//    kapt("androidx.room:room-compiler")
-//    implementation(libs.androidx.room.ktx)
 }

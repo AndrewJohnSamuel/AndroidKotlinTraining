@@ -1,5 +1,6 @@
 package com.andrew.myshop
 
+import android.database.Cursor
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
@@ -12,6 +13,9 @@ import kotlinx.coroutines.flow.Flow
 abstract class ProductDao {
     @Query("SELECT * FROM `Product`")
     abstract fun getAllProducts(): Flow<List<Product>>
+
+    @Query("SELECT * FROM `Product`")
+    abstract fun selectAll(): Cursor
 
     @Query("SELECT * FROM `Product` WHERE id=:id")
     abstract fun getProductById(id: Int): Flow<Product>
